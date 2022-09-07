@@ -99,6 +99,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemName: key
+  audioSource: {fileID: 0}
+  shovelClip: {fileID: 8300000, guid: cba125df8d1348c448b5ecba129c51a0, type: 3}
+  keyClip: {fileID: 8300000, guid: a2e3f96a7d5fc2c449551ca042acfc33, type: 3}
+  treasureClip: {fileID: 0}
 --- !u!65 &2954749036508152887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,5 +114,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 2, z: 3}
+  m_Size: {x: 4, y: 2, z: 4}
   m_Center: {x: 0, y: 0, z: 0}

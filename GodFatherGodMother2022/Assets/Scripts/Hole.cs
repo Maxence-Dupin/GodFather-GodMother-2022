@@ -10,6 +10,9 @@ public class Hole : MonoBehaviour
     [SerializeField] private bool isInTrigger = false;
     [SerializeField] private Text interactText;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class Hole : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
                 interactText.gameObject.SetActive(false);
+                audioSource.PlayOneShot(audioClip);
                 Destroy(this.gameObject);
             }
         }
