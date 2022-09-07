@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6810433984077533832}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4379997, y: 0.5, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6810433985749910401}
   - component: {fileID: 6810433985749910402}
   - component: {fileID: 6810433985749910403}
-  - component: {fileID: 6810433985749910412}
+  - component: {fileID: 2006161092}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -148,7 +148,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6810433985749910412
+--- !u!65 &2006161092
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

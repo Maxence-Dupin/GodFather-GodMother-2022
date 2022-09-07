@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LookDownZone : MonoBehaviour
 {
-    public GameObject player;
+    public Camera player;
     public float playerRotation = 0f;
     void OnTriggerEnter(Collider collider)
     {
