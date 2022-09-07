@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5031380306715238127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4379997, y: 0.5, z: 4}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5031380306715238127}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -5495902117074765545, guid: ef83535a00ba87348b0942c7342a54cd, type: 3}
 --- !u!23 &5031380306715238124
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 97f464f327ef737478e4b3a1d4c39687, type: 2}
+  - {fileID: -876546973899608171, guid: ef83535a00ba87348b0942c7342a54cd, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemName: treasure
+  audioSource: {fileID: 0}
+  shovelClip: {fileID: 8300000, guid: cba125df8d1348c448b5ecba129c51a0, type: 3}
+  keyClip: {fileID: 8300000, guid: a2e3f96a7d5fc2c449551ca042acfc33, type: 3}
+  treasureClip: {fileID: 8300000, guid: 43f0d423b42a3744da802a97d10562ee, type: 3}
 --- !u!65 &5031380306715238126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,5 +114,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 2, z: 4}
+  m_Size: {x: 0.06, y: 0.1, z: 0.06}
   m_Center: {x: 0, y: 0, z: 0}
