@@ -121,6 +121,7 @@ public class EnemyControllerAi : MonoBehaviour
             //si l'ennemie est proche du joueru il va vers sa position
             if(m_TimeToRotate <= 0)
             {
+
                 Move(speedWalk);
                 LookingPlayer(playerLastPosition);
             }
