@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Chest : MonoBehaviour
 {
 
-    private Player player;
+    private PlayerControls player;
     [SerializeField] private bool isInTrigger = false;
     [SerializeField] private Text interactText;
     [SerializeField] private GameObject treasure;
@@ -14,7 +14,7 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerControls>();
     }
 
     // Update is called once per frame

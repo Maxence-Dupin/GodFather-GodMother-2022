@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class Hole : MonoBehaviour
 {
 
-    private Player player;
+    private PlayerControls player;
     [SerializeField] private bool isInTrigger = false;
     [SerializeField] private Text interactText;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerControls>();
     }
 
     // Update is called once per frame

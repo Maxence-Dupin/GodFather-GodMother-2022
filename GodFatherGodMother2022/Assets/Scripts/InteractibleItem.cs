@@ -9,7 +9,7 @@ public class InteractibleItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        PlayerControls player = GameObject.FindWithTag("Player").GetComponent<PlayerControls>();
         player.inventory.Add(item);
         player.currentItem = item;
         Destroy(this.gameObject);
