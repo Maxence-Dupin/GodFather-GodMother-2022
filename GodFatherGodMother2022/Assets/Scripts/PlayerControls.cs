@@ -12,26 +12,48 @@ public class PlayerControls : MonoBehaviour
     public List<Item> inventory;
     public Item currentItem;
 
+    [SerializeField] bool canSprint;
     [SerializeField] float stamina = 100;
     [SerializeField] float staminaLossPerSecond;
     [SerializeField] float staminaGainPerSecond;
+    [SerializeField] float staminaRegainTimer;
 
     // Update is called once per frame
     void Update()
     {
+        staminaRegainTimer += Time.deltaTime;
         //déplacement du perso
-        if(Input.GetKey(KeyCode.LeftShift) && stamina > 0)
+        if(Input.GetKey(KeyCode.LeftShift) && stamina > 0 && staminaRegainTimer > 4)
         {
-            Debug.Log("shift");
+            canSprint = true;
+        }
+        else
+        {
+            canSprint = false;
+        }
+        
+        if(canSprint && Input.GetAxis("Vertical") != 0)
+        {
             float translation = Input.GetAxis("Vertical") * sprintSpeed * Time.deltaTime;
             transform.Translate(0, 0, translation);
             stamina -= staminaLossPerSecond * Time.deltaTime;
             stamina = Mathf.Clamp(stamina, 0, 100);
+            if(stamina == 0)
+            {
+                canSprint = false;
+                staminaRegainTimer = 0;
+            }
         }
-        else
+        else if (Input.GetAxis("Vertical") != 0)
         {
             float translation = Input.GetAxis("Vertical") * speed * Time.deltaTime;
             transform.Translate(0, 0, translation);
+        }
+
+        if(!canSprint && staminaRegainTimer > 2)
+        {
+            stamina += staminaGainPerSecond * Time.deltaTime;
+            stamina = Mathf.Clamp(stamina, 0, 100);
         }
 
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
