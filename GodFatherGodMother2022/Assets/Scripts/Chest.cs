@@ -10,6 +10,8 @@ public class Chest : MonoBehaviour
     [SerializeField] private bool isInTrigger = false;
     [SerializeField] private Text interactText;
     [SerializeField] private GameObject treasure;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,7 @@ public class Chest : MonoBehaviour
             {
                 interactText.gameObject.SetActive(false);
                 treasure.SetActive(true);
+                audioSource.PlayOneShot(audioClip);
                 Destroy(this.gameObject);
             }
         }

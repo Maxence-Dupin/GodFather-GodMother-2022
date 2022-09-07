@@ -142,8 +142,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 3, y: 2, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &7599199691334226077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,3 +158,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInTrigger: 0
   interactText: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 80ba78929684a334ebd23fbb1d314318, type: 3}

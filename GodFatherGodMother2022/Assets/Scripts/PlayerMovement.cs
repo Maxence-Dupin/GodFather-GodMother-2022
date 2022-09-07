@@ -8,6 +8,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 playerVelocity;
     public float speed = 3f;
     public float speedRotation = 3f;
+
+    public Animator headBob;
+
+    /*public float headBob = 0f;
+    public float headBob = 0f;*/
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -26,5 +32,7 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.z = input.y;
         characterController.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
         transform.Rotate(0f, speedRotation * Input.GetAxis("Horizontal") * Time.deltaTime, 0f);
+
+        headBob.SetTrigger("Walk");
     }
 }
