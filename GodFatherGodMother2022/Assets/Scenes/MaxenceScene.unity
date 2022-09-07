@@ -1088,6 +1088,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7698081923390693990, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698081923390693990, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
+      propertyPath: sprintSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698081923390693990, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
+      propertyPath: staminaGainPerSecond
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698081923390693990, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
+      propertyPath: staminaLossPerSecond
+      value: 33
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
 --- !u!1001 &7841449899335993543
