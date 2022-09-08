@@ -334,7 +334,6 @@ GameObject:
   - component: {fileID: 139872187}
   - component: {fileID: 139872186}
   - component: {fileID: 139872185}
-  - component: {fileID: 6416580566133665249}
   - component: {fileID: 139872189}
   - component: {fileID: 139872190}
   - component: {fileID: 6416580566133665250}
@@ -1397,18 +1396,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a5c9ec5064f23e47873245119d9ee90, type: 3}
---- !u!114 &6416580566133665249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139872184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8233388deed7194ba8b71c806ae4b64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6416580566133665250
 MonoBehaviour:
   m_ObjectHideFlags: 0
