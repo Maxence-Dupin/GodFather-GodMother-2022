@@ -1118,9 +1118,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1631215732}
   - component: {fileID: 1631215733}
-  - component: {fileID: 1631215731}
-  - component: {fileID: 1631215730}
-  - component: {fileID: 1631215729}
   - component: {fileID: 1631215728}
   m_Layer: 0
   m_Name: PSXManager
@@ -1146,64 +1143,6 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
---- !u!114 &1631215729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631215727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31898a7a07ac44b2ac17a1ef9d941fb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
-  isEnabled: 1
-  patternIndex: 2
-  ditherThreshold: 10
-  ditherStrength: 1
-  ditherScale: 2
---- !u!114 &1631215730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631215727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e2e3e8bcd344ecc83c390aac75b2c04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
-  isEnabled: 1
-  widthPixelation: 512
-  heightPixelation: 256
-  colorPrecision: 16
---- !u!114 &1631215731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631215727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60add0cab76d469cbdad4b80314cb093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeProfile: {fileID: 11400000, guid: 7bbe35cdf5d69e14abbb03eccedaa5bd, type: 2}
-  isEnabled: 1
-  fogDensity: 9.48
-  fogDistance: 2.9
-  fogNear: 0
-  fogFar: 81.3
-  fogAltScale: 10
-  fogThinning: 458
-  noiseScale: 843
-  noiseStrength: 0.029
-  fogColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1631215732
 Transform:
   m_ObjectHideFlags: 0
@@ -1535,7 +1474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8071665
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1543,7 +1482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.5903239
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1555,7 +1494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -72.36
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

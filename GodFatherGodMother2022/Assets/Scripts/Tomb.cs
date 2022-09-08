@@ -1,13 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using UnityEditor.Animations;
 using UnityEngine.UI;
 
 public class Tomb : MonoBehaviour
 {
-
     private PlayerControls player;
     [SerializeField] private bool isInTrigger = false;
     [SerializeField] private bool isOpen = false;
@@ -18,13 +14,13 @@ public class Tomb : MonoBehaviour
     [SerializeField] private Animator animator;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerControls>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (isInTrigger && !isOpen)
         {

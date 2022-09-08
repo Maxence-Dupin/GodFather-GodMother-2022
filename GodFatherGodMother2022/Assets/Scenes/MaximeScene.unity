@@ -760,6 +760,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6416580566133665255, guid: 817e9be9ffb148744832a4a277b6c2a5, type: 3}
   m_PrefabInstance: {fileID: 2035194085}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &760633065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760633058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a22888fdf6a49c4082b7df60f7fa9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  sprintSpeed: 0
+  rotationSpeed: 0
+  inventory: []
+  currentItem:
+    itemName: 
+  canSprint: 0
+  stamina: 100
+  staminaLossPerSecond: 0
+  staminaGainPerSecond: 0
+  staminaRegainTimer: 4
 --- !u!1 &778466366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1546,10 @@ PrefabInstance:
       propertyPath: headBob
       value: 
       objectReference: {fileID: 1121860373}
+    - target: {fileID: 139872189, guid: 817e9be9ffb148744832a4a277b6c2a5, type: 3}
+      propertyPath: playerControls
+      value: 
+      objectReference: {fileID: 760633065}
     - target: {fileID: 6416580566133665251, guid: 817e9be9ffb148744832a4a277b6c2a5, type: 3}
       propertyPath: m_RootOrder
       value: 0
