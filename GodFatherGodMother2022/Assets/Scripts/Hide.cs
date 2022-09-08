@@ -28,7 +28,7 @@ public class Hide : MonoBehaviour
     {
         if(hideCondition == true)
         {
-
+           
             if (Input.GetKeyDown(KeyCode.E) && exitConditon == false)
             {
                 meshPlayer.enabled = false;
@@ -64,11 +64,18 @@ public class Hide : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider)
+
     {
-        if(collider.name == "Enemy")
-        {
-            enemyControllerAi.canSee = false;
+        StartCoroutine(TimeToStayOnHide());
+        IEnumerator TimeToStayOnHide()
+            {
+            if (collider.name == "Enemy")
+            {
+                yield return new WaitForSeconds(7);
+                enemyControllerAi.canSee = false;
+            }
         }
+       
         if(collider.name == "Player")
         {
             hideText.SetActive(true);
