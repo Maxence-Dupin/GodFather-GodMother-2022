@@ -394,18 +394,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7698081923390693990, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698081923390693990, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
-      propertyPath: rotationSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698081923390693990, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
-      propertyPath: staminaRegainTimer
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
 --- !u!82 &236865232 stripped
@@ -1045,6 +1033,7 @@ GameObject:
   - component: {fileID: 910371239}
   - component: {fileID: 910371238}
   - component: {fileID: 910371237}
+  - component: {fileID: 910371240}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1131,6 +1120,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910371235}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &910371240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910371235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba87458de48eaf14cad8ea35f7fb0329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyControllerAi: {fileID: 0}
 --- !u!1 &985052702
 GameObject:
   m_ObjectHideFlags: 0
