@@ -265,9 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a22888fdf6a49c4082b7df60f7fa9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0
   sprintSpeed: 5
-  rotationSpeed: 90
+  rotationSpeed: 0
   inventory: []
   currentItem:
     itemName: 
@@ -275,7 +275,7 @@ MonoBehaviour:
   stamina: 100
   staminaLossPerSecond: 33
   staminaGainPerSecond: 20
-  staminaRegainTimer: 0
+  staminaRegainTimer: 4
 --- !u!136 &7698081923390693991
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -337,7 +337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  sprintSpeed: 5
   speedRotation: 80
+  playerControls: {fileID: 0}
   headBob: {fileID: 0}
 --- !u!114 &-937503802484373325
 MonoBehaviour:
