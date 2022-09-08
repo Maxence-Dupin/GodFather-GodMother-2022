@@ -487,6 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27527c034a678e1419a5464c984ec0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitRotation: 180
   hideText: {fileID: 1796602199}
   exitText: {fileID: 1195761409}
   player: {fileID: 139872184}
