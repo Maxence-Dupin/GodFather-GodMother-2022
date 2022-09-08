@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,28 +11,23 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator headBob;
 
-    void Start()
+    private void Start()
     {
         characterController = GetComponent<CharacterController>();
         playerControls = GetComponent<PlayerControls>();
     }
 
-    void Update()
-    {
-        
-    }
-
-    public void DoMovement(Vector2 input)
+    public void DoMovement()
     {
         Vector3 moveDirection = Vector3.zero;
-        moveDirection.z = input.y;
-        if(playerControls.canSprint)
+        moveDirection.z = Input.GetAxis("Vertical");
+        if (playerControls.canSprint)
         {
-            characterController.Move(transform.TransformDirection(moveDirection) * sprintSpeed * Time.deltaTime);
+            characterController.Move(sprintSpeed * Time.deltaTime * transform.TransformDirection(moveDirection));
         }
         else
         {
-            characterController.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
+            characterController.Move(speed * Time.deltaTime * transform.TransformDirection(moveDirection));
         }
         transform.Rotate(0f, speedRotation * Input.GetAxis("Horizontal") * Time.deltaTime, 0f);
 
