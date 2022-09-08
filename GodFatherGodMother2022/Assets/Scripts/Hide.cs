@@ -39,10 +39,6 @@ public class Hide : MonoBehaviour
                 hideText.SetActive(false);
                 exitText.SetActive(true);
                 exitConditon = true;
-                if (enemy.transform.position == gameObject.transform.position)
-                {
-                    
-                }
                 
                 
             } else if (Input.GetKeyDown(KeyCode.E) && exitConditon == true)
