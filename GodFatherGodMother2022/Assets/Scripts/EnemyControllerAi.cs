@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.SceneManagement;
 public class EnemyControllerAi : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
@@ -36,7 +36,7 @@ public class EnemyControllerAi : MonoBehaviour
     bool m_PlayerNear;
     bool m_IsPatrol;
     bool m_CaughtPlayer;
-    public GameObject objectToDestroy;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +63,7 @@ public class EnemyControllerAi : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Destroy(objectToDestroy);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); ;
         }
     }
     // Update is called once per frame
