@@ -102,7 +102,7 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   shovelClip: {fileID: 8300000, guid: cba125df8d1348c448b5ecba129c51a0, type: 3}
   keyClip: {fileID: 8300000, guid: a2e3f96a7d5fc2c449551ca042acfc33, type: 3}
-  treasureClip: {fileID: 0}
+  treasureClip: {fileID: 8300000, guid: 43f0d423b42a3744da802a97d10562ee, type: 3}
 --- !u!65 &2954749036508152887
 BoxCollider:
   m_ObjectHideFlags: 0
