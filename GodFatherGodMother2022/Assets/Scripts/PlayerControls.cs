@@ -12,11 +12,11 @@ public class PlayerControls : MonoBehaviour
     public List<Item> inventory;
     public Item currentItem;
 
-    [SerializeField] bool canSprint;
+    public bool canSprint;
     [SerializeField] float stamina = 100;
     [SerializeField] float staminaLossPerSecond;
     [SerializeField] float staminaGainPerSecond;
-    [SerializeField] float staminaRegainTimer;
+    [SerializeField] float staminaRegainTimer = 4;
 
     // Update is called once per frame
     void Update()

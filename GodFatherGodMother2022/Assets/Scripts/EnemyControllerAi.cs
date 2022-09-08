@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.SceneManagement;
 public class EnemyControllerAi : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
@@ -36,7 +36,7 @@ public class EnemyControllerAi : MonoBehaviour
     bool m_PlayerNear;
     bool m_IsPatrol;
     bool m_CaughtPlayer;
-    public GameObject objectToDestroy;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +63,7 @@ public class EnemyControllerAi : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Destroy(objectToDestroy);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); ;
         }
     }
     // Update is called once per frame
@@ -89,20 +89,22 @@ public class EnemyControllerAi : MonoBehaviour
         {
             Move(speedRun);
             navMeshAgent.SetDestination(m_PlayerPosition);
-            print("choper le");
+           
+
         }
         //s'il est pas pres du joueur il peut re partir en patrouille
         if(navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
             if(m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) > 6f)
             {
-                navMeshAgent.SetDestination(playerLastPosition);
+                //navMeshAgent.SetDestination(playerLastPosition);
                 m_IsPatrol =true;
                 m_PlayerNear=false;
                 Move(speedWalk);
                 m_TimeToRotate = timeToRotate;
                 m_WaitTime = startWaitTime;
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+                
             }
             else
             {
@@ -162,7 +164,7 @@ public class EnemyControllerAi : MonoBehaviour
     public void NextPoint()
     {
         //ajouté 1 a l'index de waypoint pour qu'il aille au point suivant
-        m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
+        //m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
 
 
@@ -184,6 +186,7 @@ public class EnemyControllerAi : MonoBehaviour
                 Move(speedWalk);
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
                 m_WaitTime = startWaitTime;
+                Debug.Log(m_WaitTime);
                 m_TimeToRotate = timeToRotate;
             }
             else
