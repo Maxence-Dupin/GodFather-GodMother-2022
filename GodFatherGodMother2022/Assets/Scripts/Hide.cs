@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour
 {
+    public float exitRotation = 0;
     public GameObject hideText;
     public GameObject exitText;
     public GameObject player;
@@ -37,6 +38,7 @@ public class Hide : MonoBehaviour
                 hideText.SetActive(true);
                 exitText.SetActive(false);
                 exitConditon = false;
+                player.transform.Rotate(0f, exitRotation, 0f);
             }
         }
     }
