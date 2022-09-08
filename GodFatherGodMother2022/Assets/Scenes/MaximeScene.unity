@@ -797,6 +797,7 @@ MonoBehaviour:
   enemyControllerAi: {fileID: 946349864}
   meshPlayer: {fileID: 760633062}
   characterController: {fileID: 760633061}
+  enemy: {fileID: 946349863}
 --- !u!65 &648860694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1010,12 +1011,17 @@ MonoBehaviour:
   staminaLossPerSecond: 0
   staminaGainPerSecond: 0
   staminaRegainTimer: 4
+--- !u!1 &946349863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2030359875749733309, guid: 31b6bfab0cc66e84e9e8e23bd7324f93, type: 3}
+  m_PrefabInstance: {fileID: 2030359874808628378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &946349864 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2030359875749733298, guid: 31b6bfab0cc66e84e9e8e23bd7324f93, type: 3}
   m_PrefabInstance: {fileID: 2030359874808628378}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 946349863}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5721fd1e66ac59c43b95a74ccaebf73f, type: 3}

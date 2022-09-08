@@ -27,7 +27,7 @@ public class EnemyControllerAi : MonoBehaviour
     public Transform[] waypoints;
     public int m_CurrentWaypointIndex;
 
-    Vector3 playerLastPosition = Vector3.zero;
+    public Vector3 playerLastPosition = Vector3.zero;
     Vector3 m_PlayerPosition;
 
     float m_WaitTime;
@@ -111,7 +111,8 @@ public class EnemyControllerAi : MonoBehaviour
                 m_TimeToRotate = timeToRotate;
                 m_WaitTime = startWaitTime;
                 navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
-                
+                canSee = false;
+
             }
             else
             {
@@ -185,6 +186,7 @@ public class EnemyControllerAi : MonoBehaviour
     void LookingPlayer(Vector3 player)
     {
         navMeshAgent.SetDestination(player);
+        
         if (Vector3.Distance(transform.position, player) <= 0.3)
         {
             
@@ -236,13 +238,14 @@ public class EnemyControllerAi : MonoBehaviour
                 {
                     m_PlayerInRange = false;
                     canSee = false;
+                    
                 }
             }
         
             if (Vector3.Distance(transform.position, player.position) > viewRadius)
             {
                 m_PlayerInRange = false;
-                canSee = false;
+                //canSee = false;
             }
         
             if (m_PlayerInRange)

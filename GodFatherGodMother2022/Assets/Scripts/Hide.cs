@@ -14,6 +14,7 @@ public class Hide : MonoBehaviour
     public EnemyControllerAi enemyControllerAi;
     public MeshRenderer meshPlayer;
     public CharacterController characterController;
+    public GameObject enemy;
     private void Start()
     {
         hideText.SetActive(false);
@@ -38,8 +39,11 @@ public class Hide : MonoBehaviour
                 hideText.SetActive(false);
                 exitText.SetActive(true);
                 exitConditon = true;
-               
-                enemyControllerAi.canSee = false;
+                if (enemy.transform.position == gameObject.transform.position)
+                {
+                    
+                }
+                
                 
             } else if (Input.GetKeyDown(KeyCode.E) && exitConditon == true)
             {
@@ -61,6 +65,10 @@ public class Hide : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        if(collider.name == "Enemy")
+        {
+            enemyControllerAi.canSee = false;
+        }
         if(collider.name == "Player")
         {
             hideText.SetActive(true);
