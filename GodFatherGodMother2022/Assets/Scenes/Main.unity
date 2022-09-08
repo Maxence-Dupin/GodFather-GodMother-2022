@@ -1505,6 +1505,10 @@ PrefabInstance:
       propertyPath: playerControls
       value: 
       objectReference: {fileID: 1590244186}
+    - target: {fileID: 7698081923390693984, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693988, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_Name
       value: Player
