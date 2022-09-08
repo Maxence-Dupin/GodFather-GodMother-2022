@@ -25,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 moveDirection = Vector3.zero;
         moveDirection.z = input.y;
-        characterController.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
+        //transform.Translate(0f, 0f, speed * Input.GetAxis("Vertical") * Time.deltaT ime);
+        characterController.Move(transform.TransformDirection(new Vector3(0,0, Input.GetAxis("Vertical") )) * speed * Time.deltaTime);
         transform.Rotate(0f, speedRotation * Input.GetAxis("Horizontal") * Time.deltaTime, 0f);
 
         headBob.SetTrigger("Walk");
