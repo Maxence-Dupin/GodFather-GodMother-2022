@@ -21,6 +21,7 @@ public class EnemyControllerAi : MonoBehaviour
     public float meshResolution = 1f;
     public int edgeIteration = 4;
     public float edgeDistance = 0.5f;
+    public GameObject playerInGame;
 
     //different endroit ou l'ai va aller
     public Transform[] waypoints;
@@ -36,6 +37,7 @@ public class EnemyControllerAi : MonoBehaviour
     bool m_PlayerNear;
     bool m_IsPatrol;
     bool m_CaughtPlayer;
+   public bool canSee;
     
 
     // Start is called before the first frame update
@@ -48,7 +50,7 @@ public class EnemyControllerAi : MonoBehaviour
         m_PlayerInRange = false;
         m_WaitTime = startWaitTime;
         m_TimeToRotate = timeToRotate;
-
+        canSee = false;
         m_CurrentWaypointIndex = 0;
         navMeshAgent = GetComponent<NavMeshAgent>();
 
@@ -63,7 +65,8 @@ public class EnemyControllerAi : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); ;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+            
         }
     }
     // Update is called once per frame
@@ -71,7 +74,7 @@ public class EnemyControllerAi : MonoBehaviour
     {
         EnviromentView();
 
-        if(!m_IsPatrol)
+        if(!m_IsPatrol && canSee == true)
         {
             Chasing();
         }
@@ -85,13 +88,17 @@ public class EnemyControllerAi : MonoBehaviour
     {
         m_PlayerNear = false;
         playerLastPosition = Vector3.zero;
-        if(!m_CaughtPlayer)
-        {
-            Move(speedRun);
-            navMeshAgent.SetDestination(m_PlayerPosition);
-           
+       
 
-        }
+            if (!m_CaughtPlayer)
+            {
+                //canSee = true;
+                Move(speedRun);
+                navMeshAgent.SetDestination(m_PlayerPosition);
+
+
+            }
+        
         //s'il est pas pres du joueur il peut re partir en patrouille
         if(navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
@@ -180,20 +187,24 @@ public class EnemyControllerAi : MonoBehaviour
         navMeshAgent.SetDestination(player);
         if (Vector3.Distance(transform.position, player) <= 0.3)
         {
-            if (m_WaitTime <= 0)
-            {
-                m_PlayerNear = false;
-                Move(speedWalk);
-                navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
-                m_WaitTime = startWaitTime;
-                Debug.Log(m_WaitTime);
-                m_TimeToRotate = timeToRotate;
-            }
-            else
-            {
-                Stop();
-                m_WaitTime -= Time.deltaTime;
-            }
+            
+
+
+                if (m_WaitTime <= 0)
+                {
+                    m_PlayerNear = false;
+                    Move(speedWalk);
+                    navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
+                    m_WaitTime = startWaitTime;
+                    Debug.Log(m_WaitTime);
+                    m_TimeToRotate = timeToRotate;
+                }
+                else
+                {
+                    Stop();
+                    m_WaitTime -= Time.deltaTime;
+                }
+            
         }
     }
     //Abilité de l'ennemie a nous voir et les obstacle
@@ -218,17 +229,20 @@ public class EnemyControllerAi : MonoBehaviour
                 {
                     m_PlayerInRange = true;
                     m_IsPatrol = false;
+                    canSee = true;
                 }
                 //verifier si le joueur est deriere un obstcle
                 else
                 {
                     m_PlayerInRange = false;
+                    canSee = false;
                 }
             }
         
             if (Vector3.Distance(transform.position, player.position) > viewRadius)
             {
                 m_PlayerInRange = false;
+                canSee = false;
             }
         
             if (m_PlayerInRange)
