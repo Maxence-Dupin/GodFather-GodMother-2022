@@ -62,7 +62,7 @@ MonoBehaviour:
   isInTrigger: 0
   isOpen: 0
   interactText: {fileID: 0}
-  treasure: {fileID: 0}
+  shovel: {fileID: 0}
   audioSource: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 1d4f1afb450053647bdcd21a76b0f893, type: 3}
   animator: {fileID: 7237522000266330717}
