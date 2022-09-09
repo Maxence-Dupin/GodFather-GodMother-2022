@@ -19,6 +19,10 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+#if UNITY_EDITOR
+        TestInputs();
+#endif
+
         staminaRegainTimer += Time.deltaTime;
         //déplacement du perso
         if(Input.GetKey(KeyCode.LeftShift) && stamina > 0 && staminaRegainTimer > 2)
@@ -70,4 +74,24 @@ public class PlayerControls : MonoBehaviour
             }
         }
     }
+
+#if UNITY_EDITOR
+    private void TestInputs()
+    {
+        if (!Input.anyKey)
+        {
+            Debug.LogError("None");
+            return;
+        }
+
+        if (Input.GetButton("Sprint"))
+            Debug.LogError("Sprint");
+        if (Input.GetButton("Interact"))
+            Debug.LogError("Interact");
+        if (Input.GetButton("Hand"))
+            Debug.LogError("Hand");
+        if (Input.GetButton("Skip"))
+            Debug.LogError("Skip");
+    }
+#endif
 }
