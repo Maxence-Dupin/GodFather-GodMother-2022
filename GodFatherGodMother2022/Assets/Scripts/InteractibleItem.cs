@@ -14,22 +14,25 @@ public class InteractibleItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerControls player = GameObject.FindWithTag("Player").GetComponent<PlayerControls>();
-        player.inventory.Add(item);
-        player.currentItem = item;
-        if(item.itemName == "shovel")
+        if (other.CompareTag("Player"))
         {
-            audioSource.PlayOneShot(shovelClip);
+            PlayerControls player = GameObject.FindWithTag("Player").GetComponent<PlayerControls>();
+            player.inventory.Add(item);
+            player.currentItem = item;
+            if (item.itemName == "shovel")
+            {
+                audioSource.PlayOneShot(shovelClip);
+            }
+            else if (item.itemName == "key")
+            {
+                audioSource.PlayOneShot(keyClip);
+            }
+            else if (item.itemName == "treasure")
+            {
+                audioSource.PlayOneShot(treasureClip);
+                Destroy(grille);
+            }
+            Destroy(this.gameObject);
         }
-        else if (item.itemName == "key")
-        {
-            audioSource.PlayOneShot(keyClip);
-        }
-        else if (item.itemName == "treasure")
-        {
-            audioSource.PlayOneShot(treasureClip);
-            Destroy(grille);
-        }
-        Destroy(this.gameObject);
     }
 }

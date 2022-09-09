@@ -56,12 +56,18 @@ public class SecretDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isInTrigger = true;
+        if (other.CompareTag("Player"))
+        {
+            isInTrigger = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isInTrigger = false;
-        interactText.gameObject.SetActive(false);
+        if (other.CompareTag("Player"))
+        {
+            isInTrigger = false;
+            interactText.gameObject.SetActive(false);
+        }
     }
 }
