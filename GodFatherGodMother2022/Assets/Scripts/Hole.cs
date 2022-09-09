@@ -30,11 +30,17 @@ public class Hole : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        isInTrigger = true;
+        if (other.CompareTag("Player"))
+        {
+            isInTrigger = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isInTrigger = false;
+        if (other.CompareTag("Player"))
+        {
+            isInTrigger = false;
+        }
     }
 }
