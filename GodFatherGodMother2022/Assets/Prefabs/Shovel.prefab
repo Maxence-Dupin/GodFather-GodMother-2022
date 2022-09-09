@@ -95,14 +95,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fe7b953869b08e4c91420179a281fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   item:
     itemName: shovel
   audioSource: {fileID: 0}
   shovelClip: {fileID: 8300000, guid: cba125df8d1348c448b5ecba129c51a0, type: 3}
   keyClip: {fileID: 8300000, guid: a2e3f96a7d5fc2c449551ca042acfc33, type: 3}
   treasureClip: {fileID: 8300000, guid: 43f0d423b42a3744da802a97d10562ee, type: 3}
+  grilleClip: {fileID: 8300000, guid: a0d4c6c6257b6fc4aa9f4641e50ed052, type: 3}
   grille: {fileID: 0}
 --- !u!65 &4851864075696735516
 BoxCollider:
