@@ -5525,6 +5525,7 @@ GameObject:
   - component: {fileID: 809325634}
   - component: {fileID: 809325633}
   - component: {fileID: 809325636}
+  - component: {fileID: 809325637}
   m_Layer: 6
   m_Name: Camera
   m_TagString: Untagged
@@ -5727,6 +5728,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &809325637
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809325631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9f24c06bd5936e4abcf97be5881d74c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &811802849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16195,7 +16216,7 @@ MonoBehaviour:
   sprintSpeed: 5
   speedRotation: 80
   playerControls: {fileID: 7698081923892336690}
-  headBob: {fileID: 0}
+  headBob: {fileID: 809325637}
 --- !u!1 &7698081923892336688
 GameObject:
   m_ObjectHideFlags: 0
