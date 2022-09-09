@@ -11,17 +11,17 @@ public class PlayerControls : MonoBehaviour
     public Item currentItem;
 
     public bool canSprint;
-    [SerializeField] private float stamina = 100;
-    [SerializeField] private float staminaLossPerSecond;
-    [SerializeField] private float staminaGainPerSecond;
-    [SerializeField] private float staminaRegainTimer = 4;
+    [SerializeField] float stamina = 100;
+    [SerializeField] float staminaLossPerSecond;
+    [SerializeField] float staminaGainPerSecond;
+    [SerializeField] float staminaRegainTimer = 2;
 
     // Update is called once per frame
     private void Update()
     {
         staminaRegainTimer += Time.deltaTime;
         //déplacement du perso
-        if (Input.GetButton("Sprint") && stamina > 0 && staminaRegainTimer > 4)
+        if(Input.GetKey(KeyCode.LeftShift) && stamina > 0 && staminaRegainTimer > 2)
         {
             canSprint = true;
         }

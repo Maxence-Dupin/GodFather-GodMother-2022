@@ -12,6 +12,9 @@ public class SecretDoor : MonoBehaviour
     [SerializeField] private GameObject mesh;
     [SerializeField] private Transform firstPosition;
     [SerializeField] private Transform secondPosition;
+    [SerializeField] private GameObject cadenas;
+    [SerializeField] private AudioSource audiosource;
+    [SerializeField] private AudioClip clip;
 
     // Start is called before the first frame update
     private void Start()
@@ -31,6 +34,8 @@ public class SecretDoor : MonoBehaviour
                 isOpen = true;
                 interactText.gameObject.SetActive(false);
                 StartCoroutine(LaunchPhase2());
+                Destroy(cadenas);
+                audiosource.PlayOneShot(clip);
             }
         }
         if (isOpen && !phase1)

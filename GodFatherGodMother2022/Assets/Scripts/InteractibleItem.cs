@@ -10,6 +10,7 @@ public class InteractibleItem : MonoBehaviour
     [SerializeField] private AudioClip shovelClip;
     [SerializeField] private AudioClip keyClip;
     [SerializeField] private AudioClip treasureClip;
+    [SerializeField] private GameObject grille;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,6 +28,7 @@ public class InteractibleItem : MonoBehaviour
         else if (item.itemName == "treasure")
         {
             audioSource.PlayOneShot(treasureClip);
+            Destroy(grille);
         }
         Destroy(this.gameObject);
     }
