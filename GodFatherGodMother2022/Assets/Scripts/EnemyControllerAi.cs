@@ -29,7 +29,8 @@ public class EnemyControllerAi : MonoBehaviour
 
     public Vector3 playerLastPosition = Vector3.zero;
     Vector3 m_PlayerPosition;
-
+    public AudioSource CrieEnemySound;
+    public AudioSource ChaseEnemySound;
     float m_WaitTime;
     float m_TimeToRotate;
 
@@ -77,6 +78,8 @@ public class EnemyControllerAi : MonoBehaviour
         if(!m_IsPatrol && canSee == true)
         {
             Chasing();
+            ChaseEnemySound.Play();
+            
         }
         else
         {
@@ -95,9 +98,10 @@ public class EnemyControllerAi : MonoBehaviour
                 //canSee = true;
                 Move(speedRun);
                 navMeshAgent.SetDestination(m_PlayerPosition);
+            CrieEnemySound.Play();
 
 
-            }
+        }
         
         //s'il est pas pres du joueur il peut re partir en patrouille
         if(navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
