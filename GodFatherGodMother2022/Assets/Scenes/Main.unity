@@ -3085,6 +3085,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 625033395}
     - target: {fileID: 2954749036508152884, guid: bb9933d31ec541e49b1f7bfe242d6d0b, type: 3}
+      propertyPath: grilleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a0d4c6c6257b6fc4aa9f4641e50ed052, type: 3}
+    - target: {fileID: 2954749036508152884, guid: bb9933d31ec541e49b1f7bfe242d6d0b, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1186929482}
@@ -5829,7 +5833,7 @@ PrefabInstance:
     - target: {fileID: 5265491271192924873, guid: 9d99f1b5f55500d4aac4aea0d07c1ee3, type: 3}
       propertyPath: audiosource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1186929482}
     - target: {fileID: 5265491271192924873, guid: 9d99f1b5f55500d4aac4aea0d07c1ee3, type: 3}
       propertyPath: interactText
       value: 
@@ -6679,7 +6683,7 @@ PrefabInstance:
     - target: {fileID: 6810433984077533839, guid: ff13919547a38e540876cffd9c6746c2, type: 3}
       propertyPath: audioSource
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1186929482}
     - target: {fileID: 6810433984077533839, guid: ff13919547a38e540876cffd9c6746c2, type: 3}
       propertyPath: interactText
       value: 
@@ -8725,6 +8729,10 @@ PrefabInstance:
       propertyPath: grille
       value: 
       objectReference: {fileID: 625033395}
+    - target: {fileID: 4851864075696735517, guid: 4f99cbfff8062b54ea199b680a8a6eab, type: 3}
+      propertyPath: grilleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a0d4c6c6257b6fc4aa9f4641e50ed052, type: 3}
     - target: {fileID: 4851864075696735517, guid: 4f99cbfff8062b54ea199b680a8a6eab, type: 3}
       propertyPath: audioSource
       value: 
@@ -16044,7 +16052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.44
+      value: 136.072
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16052,7 +16060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50.45
+      value: 37.784
       objectReference: {fileID: 0}
     - target: {fileID: 7698081923390693989, guid: a05c0aba87abfad4ca4781f5fbaebc47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17824,6 +17832,10 @@ PrefabInstance:
       propertyPath: grille
       value: 
       objectReference: {fileID: 625033395}
+    - target: {fileID: 5031380306715238125, guid: b26e2260ffb61bd4ca0936bc5e574008, type: 3}
+      propertyPath: grilleClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a0d4c6c6257b6fc4aa9f4641e50ed052, type: 3}
     - target: {fileID: 5031380306715238125, guid: b26e2260ffb61bd4ca0936bc5e574008, type: 3}
       propertyPath: audioSource
       value: 
