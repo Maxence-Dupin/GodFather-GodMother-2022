@@ -4,8 +4,6 @@ using UnityEngine;
 public class Hide : MonoBehaviour
 {
     public float exitRotation = 0;
-    public GameObject hideText;
-    public GameObject exitText;
     public GameObject player;
     public GameObject hideCamera;
     public bool hideCondition;
@@ -18,8 +16,6 @@ public class Hide : MonoBehaviour
 
     private void Start()
     {
-        hideText.SetActive(false);
-        exitText.SetActive(false);
         hideCondition = false;
         hideCamera.SetActive(false);
         exitConditon = false;
@@ -37,9 +33,6 @@ public class Hide : MonoBehaviour
                 characterController.enabled = false;
                 hideCamera.SetActive(true);
                 playerCam.SetActive(false);
-                hideText.SetActive(false);
-                exitText.SetActive(true);
-                
             }
             else if (Input.GetButtonDown("Interact") && exitConditon == true)
             {
@@ -50,9 +43,7 @@ public class Hide : MonoBehaviour
                 characterController.enabled = true;
                 hideCamera.SetActive(false);
                 playerCam.SetActive(true);
-                hideText.SetActive(true);
-                exitText.SetActive(false);
-               
+
                 player.transform.Rotate(0f, exitRotation, 0f);
             }
         }
@@ -73,7 +64,6 @@ public class Hide : MonoBehaviour
 
         if (collider.name == "Player")
         {
-            hideText.SetActive(true);
             hideCondition = true;
         }
     }
@@ -82,7 +72,6 @@ public class Hide : MonoBehaviour
     {
         if (collider.name == "Player")
         {
-            hideText.SetActive(false);
             hideCondition = false;
         }
     }

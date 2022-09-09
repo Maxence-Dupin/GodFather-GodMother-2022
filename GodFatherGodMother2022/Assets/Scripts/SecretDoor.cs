@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SecretDoor : MonoBehaviour
 {
@@ -8,7 +7,6 @@ public class SecretDoor : MonoBehaviour
     [SerializeField] private bool isInTrigger = false;
     [SerializeField] private bool isOpen = false;
     [SerializeField] private bool phase1 = false;
-    [SerializeField] private Text interactText;
     [SerializeField] private GameObject mesh;
     [SerializeField] private Transform firstPosition;
     [SerializeField] private Transform secondPosition;
@@ -27,12 +25,9 @@ public class SecretDoor : MonoBehaviour
     {
         if (isInTrigger && !isOpen && player.currentItem.itemName == "key")
         {
-            interactText.gameObject.SetActive(true);
-            interactText.text = "Press E to open to open the secret door";
             if (Input.GetButtonDown("Interact"))
             {
                 isOpen = true;
-                interactText.gameObject.SetActive(false);
                 StartCoroutine(LaunchPhase2());
                 Destroy(cadenas);
                 audiosource.PlayOneShot(clip);
@@ -62,6 +57,5 @@ public class SecretDoor : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isInTrigger = false;
-        interactText.gameObject.SetActive(false);
     }
 }

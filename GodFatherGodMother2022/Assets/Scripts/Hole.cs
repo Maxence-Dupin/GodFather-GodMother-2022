@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Hole : MonoBehaviour
 {
     private PlayerControls player;
     [SerializeField] private bool isInTrigger = false;
-    [SerializeField] private Text interactText;
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
@@ -22,11 +20,8 @@ public class Hole : MonoBehaviour
     {
         if (isInTrigger && player.currentItem.itemName == "shovel")
         {
-            interactText.gameObject.SetActive(true);
-            interactText.text = "Press E to dig";
             if (Input.GetButtonDown("Interact"))
             {
-                interactText.gameObject.SetActive(false);
                 audioSource.PlayOneShot(audioClip);
                 key.SetActive(true);
             }
@@ -41,6 +36,5 @@ public class Hole : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isInTrigger = false;
-        interactText.gameObject.SetActive(false);
     }
 }

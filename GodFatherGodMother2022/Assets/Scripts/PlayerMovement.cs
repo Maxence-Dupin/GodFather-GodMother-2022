@@ -23,11 +23,11 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.z = Input.GetAxis("Vertical");
         if (playerControls.canSprint)
         {
-            characterController.Move(sprintSpeed * Time.deltaTime * transform.TransformDirection(moveDirection));
+            if (characterController.enabled) characterController.Move(sprintSpeed * Time.deltaTime * transform.TransformDirection(moveDirection));
         }
         else
         {
-            characterController.Move(speed * Time.deltaTime * transform.TransformDirection(moveDirection));
+            if (characterController.enabled) characterController.Move(speed * Time.deltaTime * transform.TransformDirection(moveDirection));
         }
         transform.Rotate(0f, speedRotation * Input.GetAxis("Horizontal") * Time.deltaTime, 0f);
 
