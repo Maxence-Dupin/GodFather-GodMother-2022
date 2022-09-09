@@ -16,12 +16,29 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float staminaGainPerSecond;
     [SerializeField] private float staminaRegainTimer = 2;
 
+    [SerializeField] private GameObject arm1;
+    [SerializeField] private GameObject armKey;
+    [SerializeField] private GameObject armShovel;
+
     // Update is called once per frame
     private void Update()
     {
 #if UNITY_EDITOR
         TestInputs();
 #endif
+
+        if (currentItem.itemName == "key")
+        {
+            arm1.SetActive(false);
+            armKey.SetActive(true);
+            armShovel.SetActive(false);
+        }
+        if (currentItem.itemName == "shovel")
+        {
+            arm1.SetActive(false);
+            armKey.SetActive(false);
+            armShovel.SetActive(true);
+        }
 
         staminaRegainTimer += Time.deltaTime;
         //déplacement du perso
