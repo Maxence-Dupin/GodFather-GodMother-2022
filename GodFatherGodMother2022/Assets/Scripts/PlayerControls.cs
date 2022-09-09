@@ -78,6 +78,7 @@ public class PlayerControls : MonoBehaviour
 #if UNITY_EDITOR
     private void TestInputs()
     {
+#if false
         if (!Input.anyKey)
         {
             Debug.LogError("None");
@@ -92,6 +93,7 @@ public class PlayerControls : MonoBehaviour
             Debug.LogError("Hand");
         if (Input.GetButton("Skip"))
             Debug.LogError("Skip");
+#endif
     }
 #endif
 }
