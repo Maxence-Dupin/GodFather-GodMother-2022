@@ -30,6 +30,7 @@ public class Hide : MonoBehaviour
         {
             if (Input.GetButtonDown("Interact") && exitConditon == false)
             {
+                exitConditon = true;
                 meshPlayer.enabled = false;
                 enemyControllerAi.viewRadius = 0;
                 enemyControllerAi.nearViewRadius = 0;
@@ -38,10 +39,11 @@ public class Hide : MonoBehaviour
                 playerCam.SetActive(false);
                 hideText.SetActive(false);
                 exitText.SetActive(true);
-                exitConditon = true;
+                
             }
             else if (Input.GetButtonDown("Interact") && exitConditon == true)
             {
+                exitConditon = false;
                 meshPlayer.enabled = true;
                 enemyControllerAi.viewRadius = 8;
                 enemyControllerAi.nearViewRadius = 3;
@@ -50,7 +52,7 @@ public class Hide : MonoBehaviour
                 playerCam.SetActive(true);
                 hideText.SetActive(true);
                 exitText.SetActive(false);
-                exitConditon = false;
+               
                 player.transform.Rotate(0f, exitRotation, 0f);
             }
         }
