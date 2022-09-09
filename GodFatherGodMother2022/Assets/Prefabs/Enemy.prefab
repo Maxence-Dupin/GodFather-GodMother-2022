@@ -613,6 +613,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walking
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 684be18c88513bd489fd05a0629eb162, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c6926fd9e0e19984abbb06fdc936c52b, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 684be18c88513bd489fd05a0629eb162, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 684be18c88513bd489fd05a0629eb162, type: 3}
 --- !u!4 &1536589679587159540 stripped

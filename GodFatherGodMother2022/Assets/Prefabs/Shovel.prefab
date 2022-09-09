@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4851864075696735518
 Transform:
   m_ObjectHideFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4851864075696735506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.154, y: 1.68, z: 3.909}
-  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_LocalScale: {x: 33, y: 33, z: 33}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   shovelClip: {fileID: 8300000, guid: cba125df8d1348c448b5ecba129c51a0, type: 3}
   keyClip: {fileID: 8300000, guid: a2e3f96a7d5fc2c449551ca042acfc33, type: 3}
   treasureClip: {fileID: 8300000, guid: 43f0d423b42a3744da802a97d10562ee, type: 3}
+  grille: {fileID: 0}
 --- !u!65 &4851864075696735516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -114,5 +115,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.061836313, y: 0.04, z: 0.05241853}
-  m_Center: {x: 0.000918156, y: 0, z: -0.0019375862}
+  m_Size: {x: 0.11004074, y: 0.04, z: 0.11392977}
+  m_Center: {x: 0.012750966, y: 1.776312e-10, z: 0.018526804}

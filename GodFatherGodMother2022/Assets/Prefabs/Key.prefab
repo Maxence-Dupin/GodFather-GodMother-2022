@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2954749036508152891
 Transform:
   m_ObjectHideFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   shovelClip: {fileID: 8300000, guid: cba125df8d1348c448b5ecba129c51a0, type: 3}
   keyClip: {fileID: 8300000, guid: a2e3f96a7d5fc2c449551ca042acfc33, type: 3}
   treasureClip: {fileID: 8300000, guid: 43f0d423b42a3744da802a97d10562ee, type: 3}
+  grille: {fileID: 0}
 --- !u!65 &2954749036508152887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -114,5 +115,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1295048, y: 0.2, z: 0.2264637}
-  m_Center: {x: 0.0040016444, y: 0, z: -0.00085611345}
+  m_Size: {x: 0.3024485, y: 0.2, z: 0.30497867}
+  m_Center: {x: 0.01432519, y: 1.5139624e-11, z: 0.005855936}
