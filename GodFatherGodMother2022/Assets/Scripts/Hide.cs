@@ -14,6 +14,8 @@ public class Hide : MonoBehaviour
     public MeshRenderer meshPlayer;
     public CharacterController characterController;
     public GameObject enemy;
+    public GameObject playerCam;
+
     private void Start()
     {
         hideText.SetActive(false);
@@ -33,6 +35,7 @@ public class Hide : MonoBehaviour
                 enemyControllerAi.nearViewRadius = 0;
                 characterController.enabled = false;
                 hideCamera.SetActive(true);
+                playerCam.SetActive(false);
                 hideText.SetActive(false);
                 exitText.SetActive(true);
                 exitConditon = true;
@@ -44,6 +47,7 @@ public class Hide : MonoBehaviour
                 enemyControllerAi.nearViewRadius = 3;
                 characterController.enabled = true;
                 hideCamera.SetActive(false);
+                playerCam.SetActive(true);
                 hideText.SetActive(true);
                 exitText.SetActive(false);
                 exitConditon = false;
