@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-
     [SerializeField] private int speed;
     [SerializeField] private int sprintSpeed;
     [SerializeField] private int rotationSpeed;
@@ -13,17 +11,17 @@ public class PlayerControls : MonoBehaviour
     public Item currentItem;
 
     public bool canSprint;
-    [SerializeField] float stamina = 100;
-    [SerializeField] float staminaLossPerSecond;
-    [SerializeField] float staminaGainPerSecond;
-    [SerializeField] float staminaRegainTimer = 4;
+    [SerializeField] private float stamina = 100;
+    [SerializeField] private float staminaLossPerSecond;
+    [SerializeField] private float staminaGainPerSecond;
+    [SerializeField] private float staminaRegainTimer = 4;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         staminaRegainTimer += Time.deltaTime;
         //déplacement du perso
-        if(Input.GetKey(KeyCode.LeftShift) && stamina > 0 && staminaRegainTimer > 4)
+        if (Input.GetButton("Sprint") && stamina > 0 && staminaRegainTimer > 4)
         {
             canSprint = true;
         }
@@ -31,14 +29,14 @@ public class PlayerControls : MonoBehaviour
         {
             canSprint = false;
         }
-        
-        if(canSprint && Input.GetAxis("Vertical") != 0)
+
+        if (canSprint && Input.GetAxis("Vertical") != 0)
         {
             float translation = Input.GetAxis("Vertical") * sprintSpeed * Time.deltaTime;
             transform.Translate(0, 0, translation);
             stamina -= staminaLossPerSecond * Time.deltaTime;
             stamina = Mathf.Clamp(stamina, 0, 100);
-            if(stamina == 0)
+            if (stamina == 0)
             {
                 canSprint = false;
                 staminaRegainTimer = 0;
@@ -50,7 +48,7 @@ public class PlayerControls : MonoBehaviour
             transform.Translate(0, 0, translation);
         }
 
-        if(!canSprint && staminaRegainTimer > 2)
+        if (!canSprint && staminaRegainTimer > 2)
         {
             stamina += staminaGainPerSecond * Time.deltaTime;
             stamina = Mathf.Clamp(stamina, 0, 100);
@@ -60,9 +58,9 @@ public class PlayerControls : MonoBehaviour
         transform.Rotate(0, rotation, 0);
 
         //changer d'objet en main
-        if (Input.GetKeyDown("space") && inventory.Count > 1)
+        if (Input.GetButtonDown("Hand") && inventory.Count > 1)
         {
-            if(inventory.IndexOf(currentItem) + 1 < inventory.Count)
+            if (inventory.IndexOf(currentItem) + 1 < inventory.Count)
             {
                 currentItem = inventory[inventory.IndexOf(currentItem) + 1];
             }

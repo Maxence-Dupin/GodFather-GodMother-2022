@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hide : MonoBehaviour
@@ -22,14 +21,12 @@ public class Hide : MonoBehaviour
         hideCondition = false;
         hideCamera.SetActive(false);
         exitConditon = false;
-        
     }
     private void Update()
     {
-        if(hideCondition == true)
+        if (hideCondition == true)
         {
-           
-            if (Input.GetKeyDown(KeyCode.E) && exitConditon == false)
+            if (Input.GetButtonDown("Interact") && exitConditon == false)
             {
                 meshPlayer.enabled = false;
                 enemyControllerAi.viewRadius = 0;
@@ -39,9 +36,8 @@ public class Hide : MonoBehaviour
                 hideText.SetActive(false);
                 exitText.SetActive(true);
                 exitConditon = true;
-                
-                
-            } else if (Input.GetKeyDown(KeyCode.E) && exitConditon == true)
+            }
+            else if (Input.GetButtonDown("Interact") && exitConditon == true)
             {
                 meshPlayer.enabled = true;
                 enemyControllerAi.viewRadius = 8;
@@ -52,27 +48,24 @@ public class Hide : MonoBehaviour
                 exitText.SetActive(false);
                 exitConditon = false;
                 player.transform.Rotate(0f, exitRotation, 0f);
-                
-
-
             }
         }
     }
 
-    void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider collider)
 
     {
         StartCoroutine(TimeToStayOnHide());
         IEnumerator TimeToStayOnHide()
-            {
+        {
             if (collider.name == "Enemy")
             {
                 yield return new WaitForSeconds(7);
                 enemyControllerAi.canSee = false;
             }
         }
-       
-        if(collider.name == "Player")
+
+        if (collider.name == "Player")
         {
             hideText.SetActive(true);
             hideCondition = true;
@@ -88,4 +81,3 @@ public class Hide : MonoBehaviour
         }
     }
 }
-

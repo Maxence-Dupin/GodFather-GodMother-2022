@@ -6,12 +6,11 @@ public class StartupVideo : MonoBehaviour
 {
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private string firstScene;
-    [SerializeField] private KeyCode skipKey;
 
     private void Awake() => videoPlayer.loopPointReached += _ => SceneManager.LoadScene(firstScene);
 
     private void Update()
     {
-        if (Input.GetKeyDown(skipKey)) SceneManager.LoadScene(firstScene);
+        if (Input.GetButtonDown("Skip")) SceneManager.LoadScene(firstScene);
     }
 }

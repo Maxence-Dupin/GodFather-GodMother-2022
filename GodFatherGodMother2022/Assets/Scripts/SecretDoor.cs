@@ -1,11 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SecretDoor : MonoBehaviour
 {
-
     private PlayerControls player;
     [SerializeField] private bool isInTrigger = false;
     [SerializeField] private bool isOpen = false;
@@ -16,26 +14,26 @@ public class SecretDoor : MonoBehaviour
     [SerializeField] private Transform secondPosition;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerControls>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (isInTrigger && !isOpen && player.currentItem.itemName == "key")
         {
             interactText.gameObject.SetActive(true);
             interactText.text = "Press E to open to open the secret door";
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Interact"))
             {
                 isOpen = true;
                 interactText.gameObject.SetActive(false);
                 StartCoroutine(LaunchPhase2());
             }
         }
-        if(isOpen && !phase1)
+        if (isOpen && !phase1)
         {
             mesh.transform.position = Vector3.Lerp(mesh.transform.position, firstPosition.position, Time.deltaTime);
         }

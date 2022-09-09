@@ -26,7 +26,7 @@ public class Tomb : MonoBehaviour
         {
             interactText.gameObject.SetActive(true);
             interactText.text = "Press E to open the tomb";
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Interact"))
             {
                 isOpen = true;
                 animator.SetBool("IsOpen", true);
